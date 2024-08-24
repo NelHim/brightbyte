@@ -7,7 +7,11 @@ import woman1 from "../assets/woman1.png";
 import woman2 from "../assets/woman2.png";
 import woman3 from "../assets/woman3.png";
 import woman4 from "../assets/woman4.png";
+import ArticleCard from "../components/cards/article-card";
+import ProfileCard from "../components/cards/profile-card";
+import ServiceCard from "../components/cards/service-card";
 import {
+  position,
   randomDescription,
   randomEmail,
   randomFullName,
@@ -25,7 +29,9 @@ export default function AboutPage() {
         <div className="size-full bg-primary/60 text-center text-white">
           <div className="flex h-full items-center justify-center">
             <div className="text-white">
-              <p className="pt-3 text-7xl font-bold leading-none">About Us</p>
+              <p className="pt-3 text-xl font-bold leading-none sm:text-4xl lg:text-7xl">
+                About Us
+              </p>
             </div>
           </div>
         </div>
@@ -33,46 +39,40 @@ export default function AboutPage() {
 
       {/* Body 1 Section */}
 
-      <div className="section-layout grid grid-cols-3 gap-10 py-28 ">
-        <div className="flex flex-col items-center justify-center">
-          <img src={brainstorm2} alt="Image 1" className=" object-cover" />
-          <h2 className="mt-4 font-bold">Website Development</h2>
-          <p className="py-5 text-center">{randomSmallDescription}</p>
-          <button className=" bg-secondary px-8 py-2 font-bold text-white">
-            Read more
-          </button>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <img src={brainstorm1} alt="Image 1" className=" object-cover" />
-          <h2 className="mt-4 font-bold">Marketing Solutions</h2>
-          <p className="py-5 text-center">{randomSmallDescription}</p>
-          <button className=" bg-primary px-8 py-2 font-bold text-white">
-            Read more
-          </button>
-        </div>
-        <div className="flex flex-col items-center justify-center">
-          <img
-            src={brainstorm3}
-            alt="Image 1"
-            className="h-full object-cover"
-          />
-          <h2 className="mt-4 font-bold">Application Development</h2>
-          <p className="py-5 text-center">{randomSmallDescription}</p>
-          <button className=" bg-primary px-8 py-2 font-bold text-white">
-            Read more
-          </button>
-        </div>
+      <div className="section-layout grid gap-10 py-5 md:grid-cols-3 md:gap-10 md:py-10 lg:py-28 ">
+        <ServiceCard
+          reduceImage={false}
+          showButton={true}
+          position={position}
+          image={brainstorm2}
+          description={randomSmallDescription}
+        />
+        <ServiceCard
+          reduceImage={false}
+          showButton={true}
+          position={position}
+          image={brainstorm1}
+          description={randomSmallDescription}
+        />
+
+        <ServiceCard
+          reduceImage={false}
+          showButton={true}
+          position={position}
+          image={brainstorm3}
+          description={randomSmallDescription}
+        />
       </div>
 
       {/* Body 2 Section */}
 
       <div className="bg-gray-200">
-        <div className="section-layout grid grid-cols-2 gap-10 py-28">
+        <div className="section-layout grid gap-10 py-28 md:grid-cols-2">
           <div>
             <span className="font-bold text-primary">
               We provide digital services
             </span>
-            <p className="mt-5 text-4xl font-bold">
+            <p className="mt-5 text-2xl font-bold sm:text-4xl">
               Services We're <br /> Offering
             </p>
             <div className="mt-10">
@@ -97,54 +97,33 @@ export default function AboutPage() {
       <div className="section-layout py-28">
         <div className="text-center">
           <span className="font-bold text-primary">Our Team</span>
-          <p className="mt-5 text-4xl font-bold">Meet Our Team</p>
+          <p className="mt-5 text-2xl font-bold sm:text-4xl">Meet Our Team</p>
         </div>
 
-        <div className="mt-20 flex justify-between">
-          <div>
-            <img
-              src={woman1}
-              alt="Woman 1"
-              className="h-80 w-64 object-cover"
-            />
-            <div className="mt-3 text-center">
-              <h1 className="font-bold">{randomFullName}</h1>
-              <h2>{randomEmail}</h2>
-            </div>
-          </div>
-          <div>
-            <img
-              src={woman2}
-              alt="Woman 1"
-              className="h-80 w-64 object-cover"
-            />
-            <div className="mt-3 text-center">
-              <h1 className="font-bold">{randomFullName}</h1>
-              <h2>{randomEmail}</h2>
-            </div>
-          </div>
-          <div>
-            <img
-              src={woman3}
-              alt="Woman 1"
-              className="h-80 w-64 object-cover"
-            />
-            <div className="mt-3 text-center">
-              <h1 className="font-bold">{randomFullName}</h1>
-              <h2>{randomEmail}</h2>
-            </div>
-          </div>
-          <div>
-            <img
-              src={woman4}
-              alt="Woman 1"
-              className="h-80 w-64 object-cover"
-            />
-            <div className="mt-3 text-center">
-              <h1 className="font-bold">{randomFullName}</h1>
-              <h2>{randomEmail}</h2>
-            </div>
-          </div>
+        <div className="mt-20 grid justify-center gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+          <ProfileCard
+            image={woman1}
+            fullNames={randomFullName}
+            email={randomEmail}
+          />
+
+          <ProfileCard
+            image={woman2}
+            fullNames={randomFullName}
+            email={randomEmail}
+          />
+
+          <ProfileCard
+            image={woman3}
+            fullNames={randomFullName}
+            email={randomEmail}
+          />
+
+          <ProfileCard
+            image={woman4}
+            fullNames={randomFullName}
+            email={randomEmail}
+          />
         </div>
       </div>
 
@@ -154,81 +133,27 @@ export default function AboutPage() {
         <div className="section-layout  py-28">
           <div className="text-center">
             <span className="font-bold text-primary">Over Articles</span>
-            <p className="mt-5 text-4xl font-bold">Over Latest News</p>
+            <p className="mt-5 text-2xl font-bold sm:text-4xl">
+              Over Latest News
+            </p>
           </div>
-          <div className="mt-14 flex justify-center gap-12">
-            <div className="w-64">
-              <img
-                src={brainstorm2}
-                alt="Brainstorming 2"
-                className="h-48 object-cover"
-              />
-              <div className="bg-white text-sm">
-                <div className="p-5">
-                  <span className="font-bold">
-                    Business Intelligence in Mobile App Development
-                  </span>
-                  <p className="mt-3">{randomSmallDescription}</p>
-                  <button className=" mt-3 bg-primary px-8 py-2 font-bold text-white">
-                    Read more
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="w-64">
-              <img
-                src={brainstorm1}
-                alt="Brainstorming 2"
-                className="h-48  object-cover"
-              />
-              <div className="bg-white text-sm">
-                <div className="p-5">
-                  <span className="font-bold">
-                    5 reasons why app developers should partner
-                  </span>
-                  <p className="mt-3">{randomSmallDescription}</p>
-                  <button className=" mt-3 bg-primary px-8 py-2 font-bold text-white">
-                    Read more
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="w-64">
-              <img
-                src={brainstorm3}
-                alt="Brainstorming 2"
-                className="h-48  object-cover"
-              />
-              <div className="bg-white text-sm">
-                <div className="p-5">
-                  <span className="font-bold">
-                    12 Web development trends for 2024
-                  </span>
-                  <p className="mt-3">{randomSmallDescription}</p>
-                  <button className=" mt-3 bg-primary px-8 py-2 font-bold text-white">
-                    Read more
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="w-64">
-              <img
-                src={image3}
-                alt="Brainstorming 2"
-                className="h-48 object-cover"
-              />
-              <div className="bg-white text-sm">
-                <div className="p-5">
-                  <span className="font-bold">
-                    12 Web development trends for 2024
-                  </span>
-                  <p className="mt-3">{randomSmallDescription}</p>
-                  <button className=" mt-3 bg-primary px-8 py-2 font-bold text-white">
-                    Read more
-                  </button>
-                </div>
-              </div>
-            </div>
+          <div className="mt-14 grid gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+            <ArticleCard
+              image={brainstorm2}
+              description={randomSmallDescription}
+            />
+
+            <ArticleCard
+              image={brainstorm1}
+              description={randomSmallDescription}
+            />
+
+            <ArticleCard
+              image={brainstorm3}
+              description={randomSmallDescription}
+            />
+
+            <ArticleCard image={image3} description={randomSmallDescription} />
           </div>
         </div>
       </div>
