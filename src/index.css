@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .main-layout {
+  @apply max-w-[2500px] mx-auto;
+} */
+
+.section-layout {
+  @apply px-5 sm:max-w-screen-xl mx-auto ;
+}
