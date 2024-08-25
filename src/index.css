@@ -4,10 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .main-layout {
-  @apply max-w-[2500px] mx-auto;
-} */
+@layer components {
+  html {
+    scroll-behavior: smooth;
+  }
 
-.section-layout {
-  @apply px-5 sm:max-w-screen-xl mx-auto ;
+  .section-layout {
+    @apply px-5 sm:max-w-screen-xl mx-auto;
+  }
 }

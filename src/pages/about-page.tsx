@@ -23,18 +23,12 @@ export default function AboutPage() {
     <div>
       {/* Hero Section */}
       <div
-        className="h-custom-hero bg-cover bg-center xl:max-h-[800px]"
+        className="grid min-h-dvh place-content-center bg-primary/60 bg-cover bg-center pt-16 text-center text-white bg-blend-overlay"
         style={{ backgroundImage: `url(${brainstorm1})` }}
       >
-        <div className="size-full bg-primary/60 text-center text-white">
-          <div className="flex h-full items-center justify-center">
-            <div className="text-white">
-              <p className="pt-3 text-xl font-bold leading-none sm:text-4xl lg:text-7xl">
-                About Us
-              </p>
-            </div>
-          </div>
-        </div>
+        <p className="pt-3 text-xl font-bold leading-none sm:text-4xl lg:text-7xl">
+          About Us
+        </p>
       </div>
 
       {/* Body 1 Section */}

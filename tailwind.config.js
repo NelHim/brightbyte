@@ -13,7 +13,7 @@ export default {
         secondary: "#B5097B",
       },
       height: {
-        "custom-hero": "calc(100dvh - 20rem)",
+        "custom-hero": "100dvh",
       },
     },
   },

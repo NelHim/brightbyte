@@ -2,7 +2,6 @@ import image3 from "../assets/agreement.png";
 import image2 from "../assets/headShot.png";
 import image1 from "../assets/image1.png";
 import ServiceCard from "../components/cards/service-card";
-import TestimonialCard from "../components/cards/testimonial-card";
 import { position, randomDescription } from "../data/fake-data";
 
 export default function ServicesPage() {
@@ -10,18 +9,12 @@ export default function ServicesPage() {
     <div>
       {/* Hero Section for services */}
       <div
-        className="h-custom-hero bg-cover bg-center xl:max-h-[800px]"
+        className="grid min-h-dvh place-content-center bg-primary/60 bg-cover bg-center pt-16 text-center text-white bg-blend-overlay"
         style={{ backgroundImage: `url(${image3})` }}
       >
-        <div className="size-full bg-primary/60 text-center text-white">
-          <div className="flex h-full items-center justify-center">
-            <div className="text-white">
-              <p className="pt-3 text-xl font-bold leading-none sm:text-4xl lg:text-7xl">
-                Services
-              </p>
-            </div>
-          </div>
-        </div>
+        <p className="pt-3 text-xl font-bold leading-none sm:text-4xl lg:text-7xl">
+          Services
+        </p>
       </div>
 
       {/* Body 1 Section */}
@@ -101,12 +94,6 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Body 2 Section */}
-
-      <div className="section-layout grid items-center justify-center gap-10 py-28 text-center ">
-        <TestimonialCard image={image2} description={randomDescription} />
       </div>
     </div>
   );

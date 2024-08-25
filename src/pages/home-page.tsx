@@ -1,42 +1,54 @@
 import { faker } from "@faker-js/faker";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
+import customerService from "../assets/customer-service.png";
 import image2 from "../assets/headShot.png";
 import image1 from "../assets/image1.png";
+import knight from "../assets/knight.png";
+import systematization from "../assets/systematization.png";
 import ServiceCard from "../components/cards/service-card";
 import TestimonialCard from "../components/cards/testimonial-card";
-import { photo, position } from "../data/fake-data";
+import { position } from "../data/fake-data";
 
 export default function HomePage() {
   const randomDescription = faker.word.words(30);
   const randomExtraSmallDescription = faker.word.words(10);
 
+  const pagination = {
+    clickable: true,
+    renderBullet: function (_index: number, className: string) {
+      return '<span class="' + className + '">' + "</span>";
+    },
+  };
+
   return (
-    <div>
+    <>
       {/* Hero Section */}
       <div
-        className="h-custom-hero max-h-[800px]  bg-cover bg-center"
+        className="grid min-h-dvh place-content-center bg-primary/60 bg-cover bg-center pt-16 text-center text-white bg-blend-overlay"
         style={{ backgroundImage: `url(${image1})` }}
       >
-        <div className="size-full bg-primary/60 py-10 text-center text-white">
-          <div className="flex h-full items-center justify-center">
-            <div className="text-white">
-              <h2 className="font-sans font-bold uppercase sm:text-lg">
-                Welcome to digital startup agency
-              </h2>
-              <p className="pt-3 text-xl font-bold leading-none sm:text-4xl lg:text-7xl">
-                Best Digital Technology <br /> Agency
-              </p>
+        <h2 className="font-sans font-bold uppercase sm:text-lg">
+          Welcome to digital startup agency
+        </h2>
+        <p className="pt-3 text-xl font-bold leading-none sm:text-4xl lg:text-7xl">
+          Best Digital Technology <br /> Agency
+        </p>
 
-              <button className="mt-14 bg-white px-10 py-3 font-bold text-primary">
-                Read more
-              </button>
-            </div>
-          </div>
-        </div>
+        <a
+          href="#more"
+          className="mx-auto mt-14 w-min whitespace-nowrap bg-white px-10 py-3 font-bold text-primary"
+        >
+          Read more
+        </a>
       </div>
 
       {/* Body 1 Section */}
-      <div className="section-layout mt-20">
+      <div className="section-layout pt-20" id="more">
         <span className="font-bold text-primary">About Us</span>
         <p className="mt-5 font-bold md:text-2xl lg:text-4xl">
           We' re Delivering only <br className="hidden sm:block" /> Exceptional
@@ -184,8 +196,21 @@ export default function HomePage() {
         <span className="font-bold text-primary hover:text-secondary">
           Testimonials
         </span>
-
-        <TestimonialCard image={image2} description={randomDescription} />
+        <Swiper
+          pagination={pagination}
+          modules={[Pagination]}
+          className="w-full pb-10"
+        >
+          <SwiperSlide>
+            <TestimonialCard image={image1} description={randomDescription} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TestimonialCard image={image2} description={randomDescription} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <TestimonialCard image={image2} description={randomDescription} />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       {/* Body 6 section */}
@@ -205,7 +230,7 @@ export default function HomePage() {
                 reduceImage={true}
                 showButton={false}
                 position={position}
-                image={photo()}
+                image={knight}
                 description={randomExtraSmallDescription}
               />
               <ServiceCard
@@ -213,19 +238,19 @@ export default function HomePage() {
                 showButton={false}
                 position={position}
                 description={randomExtraSmallDescription}
-                image={photo()}
+                image={customerService}
               />
               <ServiceCard
                 reduceImage={true}
                 showButton={false}
                 position={position}
                 description={randomExtraSmallDescription}
-                image={photo()}
+                image={systematization}
               />
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

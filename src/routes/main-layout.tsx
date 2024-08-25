@@ -1,3 +1,10 @@
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaWhatsapp,
+  FaYoutube,
+} from "react-icons/fa6";
+import { IoIosArrowDropup } from "react-icons/io";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 import MobileNavBar from "../components/navigation/mobile-drawer";
@@ -7,8 +14,8 @@ export default function MainLayout() {
   return (
     <div>
       {/* Navigation bar */}
-      <div className="sticky top-0 z-50 hidden bg-white sm:block">
-        <div className="section-layout flex justify-between  py-5">
+      <div className="fixed top-0 z-50 w-full bg-white">
+        <div className="section-layout flex justify-between  py-4">
           <Link to={"/"}>
             <span className="text-2xl font-bold">Logo</span>
           </Link>
@@ -40,30 +47,60 @@ export default function MainLayout() {
           <div className="grid gap-10 sm:grid-cols-4">
             <span className="text-3xl font-bold">Logo</span>
             <div className="flex flex-col gap-5">
-              <p className="font-bold">Main Office</p>
-              <p className="text-sm">Austria 82 12th Street, Office 14, LA</p>
-              <p className="text-sm">10001234567</p>
+              <Link to={"/"} className="font-bold">
+                Main Office
+              </Link>
+              <Link to={"/"} className="text-sm">
+                Austria 82 12th Street, Office 14, LA
+              </Link>
+              <Link to={"/"} className="text-sm">
+                10001234567
+              </Link>
             </div>
             <div className="flex flex-col gap-5">
-              <p className="font-bold">Useful Links</p>
-              <p className="text-sm">Our Services</p>
-              <p className="text-sm">Our Team</p>
-              <p className="text-sm">Portfolio</p>
-              <p className="text-sm">Shortcodes</p>
-              <p className="text-sm">Typography</p>
-              <p className="text-sm">Privacy Policy</p>
+              <Link to={"/"} className="font-bold">
+                Useful Links
+              </Link>
+              <Link to={"/"} className="text-sm">
+                Our Services
+              </Link>
+              <Link to={"/"} className="text-sm">
+                Our Team
+              </Link>
+              <Link to={"/"} className="text-sm">
+                Portfolio
+              </Link>
+              <Link to={"/"} className="text-sm">
+                Shortcodes
+              </Link>
+              <Link to={"/"} className="text-sm">
+                Typography
+              </Link>
+              <Link to={"/"} className="text-sm">
+                Privacy Policy
+              </Link>
             </div>
             <div className="flex flex-col gap-5">
               <p className="font-bold">Socials</p>
-              <p className="text-sm">FaceBook</p>
-              <p className="text-sm">Instagram</p>
-              <p className="text-sm">Youtube</p>
-              <p className="text-sm">WhatsApp</p>
+              <div className="flex gap-2">
+                <FaFacebookF className="text-xl" />
+                <FaInstagram className="text-xl" />
+                <FaYoutube className="text-xl" />
+                <FaWhatsapp className="text-xl" />
+              </div>
             </div>
           </div>
-          <p className="pt-14 font-light">Logo@2024, All Right Reserved.</p>
+          <p className="pt-14 font-light">
+            Logo@{new Date().getFullYear()}, All Right Reserved.
+          </p>
         </div>
       </footer>
+      <a
+        className="fixed bottom-5 right-5 bg-primary p-2 text-white sm:right-20 sm:text-3xl"
+        href="#"
+      >
+        <IoIosArrowDropup />
+      </a>
     </div>
   );
 }
