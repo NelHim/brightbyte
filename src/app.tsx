@@ -14,26 +14,14 @@ function App() {
       errorElement: <ErrorPage />,
       children: [
         { path: "/", element: <HomePage /> },
-        // {
-        //   path: "/features",
-        //   element: <FeaturesPage />,
-        // },
         {
           path: "/services",
           element: <ServicesPage />,
         },
-        // {
-        //   path: "/prices",
-        //   element: <PricesPage />,
-        // },
         {
           path: "/about",
           element: <AboutPage />,
         },
-        // {
-        //   path: "/contacts",
-        //   element: <ContactsPage />,
-        // },
       ],
     },
   ]);

@@ -1,8 +1,13 @@
 import image3 from "../assets/agreement.png";
-import image2 from "../assets/headShot.png";
-import image1 from "../assets/image1.png";
+import ServicesA from "../assets/services-page-images/Service-a.jpg";
+import ServicesB from "../assets/services-page-images/Service-b.jpg";
+import ServicesC from "../assets/services-page-images/Service-c.jpg";
+import ServicesD from "../assets/services-page-images/Service-d.jpg";
+import HeadShotA from "../assets/services-page-images/head-shots/shot-a.jpg";
+import HeadShotB from "../assets/services-page-images/head-shots/shot-b.jpg";
+import HeadShotC from "../assets/services-page-images/head-shots/shot-c.jpg";
+import HeadShotD from "../assets/services-page-images/head-shots/shot-d.jpg";
 import ServiceCard from "../components/cards/service-card";
-import { position, randomDescription } from "../data/fake-data";
 
 export default function ServicesPage() {
   return (
@@ -32,21 +37,23 @@ export default function ServicesPage() {
               <ServiceCard
                 reduceImage={true}
                 showButton={true}
-                position={position}
-                description={randomDescription}
-                image={image2}
+                position={() => "Lead Response Specialist | FashionFusion"}
+                description={
+                  "We revamped FashionFusion’s online store with a modern design and enhanced functionality. The upgrade resulted in a 45% increase in online sales and a more intuitive shopping experience for their customers."
+                }
+                image={HeadShotA}
               />
             </div>
             <div className="order-2">
               <img
-                src={image1}
+                src={ServicesA}
                 alt="image 1"
                 className="object-cover md:h-full"
               />
             </div>
             <div className="order-4 md:order-3">
               <img
-                src={image1}
+                src={ServicesB}
                 alt="image 1"
                 className="object-cover md:h-full"
               />
@@ -55,30 +62,34 @@ export default function ServicesPage() {
               <ServiceCard
                 reduceImage={true}
                 showButton={true}
-                position={position}
-                description={randomDescription}
-                image={image2}
+                position={() => "Direct Implementation Manager | EduSpark"}
+                description={
+                  "Our team developed a custom e-learning platform for EduSpark, which improved user engagement and course completion rates. Within six months, they saw a 70% rise in active users and positive feedback from students."
+                }
+                image={HeadShotB}
               />
             </div>
             <div className="order-5">
               <ServiceCard
                 reduceImage={true}
                 showButton={true}
-                position={position}
-                description={randomDescription}
-                image={image2}
+                position={() => "Principal Accounts Strategist | FitTrack"}
+                description={
+                  "We launched a targeted digital advertising campaign for FitTrack, leading to a 35% increase in app downloads and a surge in new user registrations. The campaign effectively expanded their reach and market presence."
+                }
+                image={HeadShotC}
               />
             </div>
             <div className="order-6">
               <img
-                src={image1}
+                src={ServicesC}
                 alt="image 1"
                 className="object-cover md:h-full"
               />
             </div>
             <div className="md:order-7">
               <img
-                src={image1}
+                src={ServicesD}
                 alt="image 1"
                 className="object-cover md:h-full"
               />
@@ -87,9 +98,13 @@ export default function ServicesPage() {
               <ServiceCard
                 reduceImage={true}
                 showButton={true}
-                position={position}
-                description={randomDescription}
-                image={image2}
+                position={() =>
+                  "Customer Directives Representative | TravelVista"
+                }
+                description={
+                  "For TravelVista, we designed a visually appealing and user-friendly travel booking website. The new site boosted bookings by 25% and improved the overall customer journey, making travel planning easier and more enjoyable."
+                }
+                image={HeadShotD}
               />
             </div>
           </div>

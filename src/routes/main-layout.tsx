@@ -15,9 +15,9 @@ export default function MainLayout() {
     <div>
       {/* Navigation bar */}
       <div className="fixed top-0 z-50 w-full bg-white">
-        <div className="section-layout flex justify-between  py-4">
+        <div className="section-layout hidden justify-between py-4 sm:flex">
           <Link to={"/"}>
-            <span className="text-2xl font-bold">Logo</span>
+            <span className="text-2xl font-bold">BrightByte</span>
           </Link>
           <ul className="flex gap-24">
             {navLinks.map((link) => (
@@ -45,13 +45,13 @@ export default function MainLayout() {
       <footer className="bg-[#18191A]">
         <div className="section-layout py-16 text-white">
           <div className="grid gap-10 sm:grid-cols-4">
-            <span className="text-3xl font-bold">Logo</span>
+            <span className="text-3xl font-bold">BrightByte</span>
             <div className="flex flex-col gap-5">
               <Link to={"/"} className="font-bold">
                 Main Office
               </Link>
               <Link to={"/"} className="text-sm">
-                Austria 82 12th Street, Office 14, LA
+                Kigali 12th Street, Office 14, KCT
               </Link>
               <Link to={"/"} className="text-sm">
                 10001234567

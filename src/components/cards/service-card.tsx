@@ -26,10 +26,12 @@ export default function ServiceCard({
         src={image}
         alt="Image 1"
         className={classNames("object-cover", {
-          "size-20 rounded-full": reduceImage,
+          "size-28 rounded-full": reduceImage,
         })}
       />
-      <h2 className="mt-4 text-sm font-bold sm:text-base">{position()}</h2>
+      <h2 className="mt-4 text-center text-sm font-bold sm:text-base">
+        {position()}
+      </h2>
       <p className="py-5 text-center">{description}</p>
       {showButton ? (
         <button className="bg-primary px-10 py-3 font-bold text-white hover:bg-secondary">

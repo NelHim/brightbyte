@@ -10,7 +10,7 @@ export default function MobileDrawer() {
     <div className="sticky top-0 z-50 bg-white/95">
       <Menu
         as="div"
-        className=" flex w-1/2 items-center justify-between pl-2  sm:hidden"
+        className="flex w-1/2 items-center justify-between pl-2  sm:hidden"
       >
         <MenuButton className="inline-flex items-center gap-2 rounded-md px-3  py-1.5 text-4xl font-semibold text-black shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-200 data-[open]:bg-gray-200 data-[focus]:outline-1 data-[focus]:outline-white">
           <IoMenuOutline />
