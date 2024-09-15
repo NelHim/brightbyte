@@ -37,7 +37,7 @@ export default function MobileDrawer() {
           ))}
         </MenuItems>
         <Link to={"/"} className="translate-x-1/2 text-xl font-bold">
-          Logo
+          BrightByte
         </Link>
       </Menu>
     </div>
