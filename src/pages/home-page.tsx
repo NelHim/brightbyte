@@ -74,8 +74,6 @@ export default function HomePage() {
               businesses thrive online.
             </p>
             <p className="mt-8">Let's bring your vision to life.</p>
-
-            <button className="mt-5 font-bold text-primary">Read more</button>
           </div>
 
           <div className="col-span-full md:col-span-2 lg:py-20">
@@ -149,10 +147,6 @@ export default function HomePage() {
             tailored digital solutions that drive growth. With a client-first
             approach, we’re committed to helping your business thrive.
           </p>
-
-          <button className="mt-10 bg-primary px-10 py-3 font-bold text-white">
-            Read more
-          </button>
         </div>
         <div>
           <img src={HomePageC} alt="Image 1" />

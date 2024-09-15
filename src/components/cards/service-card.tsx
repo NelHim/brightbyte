@@ -33,11 +33,6 @@ export default function ServiceCard({
         {position()}
       </h2>
       <p className="py-5 text-center">{description}</p>
-      {showButton ? (
-        <button className="bg-primary px-10 py-3 font-bold text-white hover:bg-secondary">
-          Read more
-        </button>
-      ) : undefined}
     </div>
   );
 }
